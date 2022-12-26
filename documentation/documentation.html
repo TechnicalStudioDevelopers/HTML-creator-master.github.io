@@ -1,0 +1,133 @@
+<!-- ***** BEGIN LICENSE BLOCK *****
+ * Distributed under the BSD license:
+ *
+ * Copyright (c) 2010, Ajax.org B.V.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of Ajax.org B.V. nor the
+ *       names of its contributors may be used to endorse or promote products
+ *       derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL AJAX.ORG B.V. BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * ***** END LICENSE BLOCK ***** 
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Documentation</title>
+	<script src="/main.js"></script>
+	<link rel="stylesheet" href="/style.css">
+	<script src="/documentation/codeEditorJS/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/documentation/codeEditorJS/ext-language_tools.js"></script>
+	<script src="/documentation/codeEditorJS/ext-beautify.js"></script>
+	<style type="text/css" media="screen">
+		.editor {
+			width: 100%;
+		}
+
+		body {
+			padding: 0;
+			margin: 0;
+			color:#fff;
+		}
+
+		.copy {
+			padding: .5em;
+			color: #B6B6B6;
+			background: #66666A;
+			float:right;
+		}
+	</style>
+</head>
+
+<body>
+	<center>
+		<h1>Introduction</h1>
+	</center>
+	Get a guide for HTML creator master extra features
+	<h3>Get User's UID</h3>
+	<div class="editor" id="editor1"></div>
+	<h3>Get User's Email</h3>
+	<div class="editor" id="editor2"></div>
+	<h3>Get User's last used password</h3>
+	
+	<!-- <div class="copy" id="copy1">Copy</div> -->
+	<p><b>Step 1 : </b>Add the following code at the top of your script.</p>
+	<div class="editor" id="editor4"></div>
+	<p><b>Step 2 : </b>Ask user for permission to read password using following code</p>
+	<div class="editor" id="editor5"></div>
+	<p><b>Info : </b>A popup will appear asking for permission to read the password as follow</p>
+	<img src="/documentation/documentaryCodes/assets/IMG_20221225_140628.jpg" style="width:100%;">
+	<script>
+		function setEditor(id, string, Path, language) {
+			ace.require("ace/ext/language_tools");
+			var beautify = ace.require("ace/ext/beautify"); // get reference to extension
+
+			var id = ace.edit(string);
+			id.session.setMode("ace/mode/" + language);
+			// enable autocompletion and snippets
+			id.setOptions({
+				enableBasicAutocompletion: true,
+				enableSnippets: true,
+				enableLiveAutocompletion: true,
+				maxLines: Infinity
+			});
+			id.setTheme("ace/theme/monokai");
+			id.setReadOnly(true);
+			document.getElementById(string).style.fontSize = '6pt';
+			getFilesData(Path).then(data => {
+				id.setValue(data);
+				id.clearSelection();
+			});
+			document.getElementById(string).style.fontSize = '10pt';
+			/*document.getElementById(copy).onclick = function (){
+				toast('Copied');
+			}*/
+		}
+
+		async function getFilesData(path) {
+			json = fetch(path).then(response => {
+				return response.text();
+			}).then(data => {
+				json = data;
+				return data;
+			}).catch(error => {
+				console.log(error);
+			});
+			return json;
+		}
+	</script>
+	<script>
+		var editor1;
+		var editor2
+		var editor4;
+		var editor5;
+		setEditor(editor1, 'editor1', '/documentation/documentaryCodes/code_4.js', 'javascript');
+		setEditor(editor2, 'editor2', '/documentation/documentaryCodes/code_3.js', 'javascript');
+		setEditor(editor4, 'editor4', '/documentation/documentaryCodes/code_1.js', 'javascript');
+		setEditor(editor5, 'editor5', '/documentation/documentaryCodes/code_2.js', 'javascript');
+	</script>
+</body>
+
+</html>

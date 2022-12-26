@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>HTML creator master</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+</head>
+
+<body>
+
+	<div id="drawer">
+		<span class="material-icons" id="closeIcon">
+			close
+		</span>
+		<a class="drawerLinksAnchor" href="#section5" onclick="drawerState(false)">
+			<div class="drawerLinks">Download App</div>
+		</a>
+		<a class="drawerLinksAnchor" href="#about1.3.0" onclick="drawerState(false)">
+			<div class="drawerLinks">About Version 1.3.0</div>
+		</a>
+		<a class="drawerLinksAnchor" href="#aboutUpcomming" onclick="drawerState(false)">
+			<div class="drawerLinks">About Upcoming features</div>
+		</a>
+		<a class="drawerLinksAnchor" href="#about1.2.1" onclick="drawerState(false)">
+			<div class="drawerLinks">About Version 1.2.1</div>
+		</a>
+		<a class="drawerLinksAnchor" href="#about1.2.0" onclick="drawerState(false)">
+			<div class="drawerLinks">About Version 1.2.0</div>
+		</a>
+		<a class="drawerLinksAnchor" href="#section1Content" onclick="drawerState(false)">
+			<div class="drawerLinks">Terms and conditions</div>
+		</a>
+		<a class="drawerLinksAnchor" href="#section1Content" onclick="drawerState(false)">
+			<div class="drawerLinks">Privacy Policy</div>
+		</a>
+		<a class="drawerLinksAnchor" href="#section3" onclick="drawerState(false)">
+			<div class="drawerLinks">Our Social Media</div>
+		</a>
+		<a class="drawerLinksAnchor" href="main/FAQs.html" onclick="drawerState(false)">
+			<div class="drawerLinks">FAQs</div>
+		</a>
+		<a class="drawerLinksAnchor" href="documentation/documentation.html" onclick="drawerState(false)">
+			<div class="drawerLinks">Documentation</div>
+		</a>
+		<a class="drawerLinksAnchor" href="main/license.html" onclick="drawerState(false)">
+			<div class="drawerLinks">Licenses</div>
+		</a>
+		<a class="drawerLinksAnchor" href="#section4" onclick="drawerState(false)">
+			<div class="drawerLinks">Contact us</div>
+		</a>
+	</div>
+
+	<span id="navigationTigger"></span>
+	<header id="header" id="header">
+		<span class="material-icons" id="menuIcon">
+			menu
+		</span>
+
+		<img src="assets/favicon.png" alt="HTML creator master" id="header_logo">
+	</header>
+
+	<div id="confirmDialogBackDrop">
+		<div id="confirmDialog">
+			<span class="material-icons" style="color:black;float: right;" onclick="dialog(false)">
+				close
+			</span>
+			<div id="dialogContent">
+				<p style="
+				color:black;
+				">By download our app it means you have readed and agree to the</p>
+				<div id="agreeList">
+					<div class="agreeListContent">
+						<input type="checkbox" id="checkbox1">
+						<a href="#section1" onclick="dialog(false)">Terms and conditions</a>
+					</div>
+
+					<div class="agreeListContent">
+						<input type="checkbox" id="checkbox2">
+						<a href="#section1" onclick="dialog(false)">Privacy policy</a>
+					</div>
+
+					<center>
+						<button onclick="if(document.getElementById('checkbox1').checked && document.getElementById('checkbox2').checked){
+						download()
+					}else{
+						toast('You have to accept Privacy policy and terms and conditions to download app');
+					}" class="buttonUI">Download</button>
+
+						<button onclick="
+							dialog(false)
+					" class="buttonUI">Cancel</button>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<center>
+		<div id="circle-logo">
+			<img src="assets/favicon.png" id="logo" alt="TSD logo">
+		</div>
+	</center>
+
+	<div class="section" id="section5">
+		<div class="section5Content">
+			<center>
+				<iframe src="https://www.youtube.com/embed/e0SwBnzCsZw"></iframe>
+				<br>
+				<button onclick="dialog(true)" class="buttonUI">Download</button>
+			</center>
+
+		</div>
+	</div>
+	<div class="section" id="section6">
+		<center>
+			<p style="text-decoration: underline;" onclick="section('6')">Upload video</p>
+		</center>
+		<div class="sectionContent" id="section6Content">
+			<center>
+				<p style="text-decoration: underline;">Rules</p>
+			</center>
+
+			<ul>
+				<li>Upload your own videos only.</li>
+				<li>Video language must be English or videos should be voiceless.</li>
+				<li>Please write a confirm message below the video that you are giving me right to upload your video on my app.</li>
+				<li>You must need to send a screenshot of the channel to confirm that it is you own channel.</li>
+			</ul>
+			<center>
+				<a href="https://t.me/TechnicalStudioDeveloper"><button class="buttonUI">Send on Telegram</button></a>
+			</center>
+		</div>
+	</div>
+
+	<div class="section" id="section1">
+		<center>
+			<p style="text-decoration: underline;" onclick="section('1')">Privacy policy and Terms</p>
+		</center>
+		<div class="sectionContent" id="section1Content">
+			<center>
+				<a href="assets/termsandcondition.html" id="termsandcondition"><button class="buttonUI">Terms and Conditions</button></a>
+				<a href="assets/privacypolicy.html" id="privacypolicy"><button class="buttonUI">Privacy Policy</button></a>
+			</center>
+		</div>
+	</div>
+
+	<div class="section" id="section2">
+		<center>
+			<p style="text-decoration: underline;" onclick="section('2')">About</p>
+		</center>
+		<div class="sectionContent" id="section2Content">
+			<h3 style="text-decoration: underline;" id="about1.3.0">About version 1.3.0(Upcomming)</h3>
+			<ul>
+				<li>3 Bug fixes</li>
+				<li>Added Folder system in projects</li>
+				<li>Added folder system in YouTube tutorials</li>
+				<li>Follower and following list button design changes</li>
+				<li>Profile viewer improvement</li>
+				<li>Uploading post from public code page is moved</li>
+				<li>Device list in profile viewer.</li>
+				<ul>
+					<li>See device list of any user(that has been made public) which he/she used in login.</li>
+					<li>You can set your device list as private or public(<a href="/assets/privacypolicy.html#devicelist">Privacy policy apply</a>).</li>
+					<li>See in which device you used for login.</li>
+				</ul>
+				<li>3 small UI improvements</li>
+				<ul>
+					<li>Listview hold to view round corner with ripple effect.</li>
+					<li>Round profile in image.</li>
+					<li>"See more" in profile viewer button round corner changed.</li>
+				</ul>
+				<ul>
+					<li>Weview improvement.</li>
+					<ul>
+						<li>Code play<a href="documentation/index.html">(Documentation)</a></li>
+						<ul>
+							<li>Ask for user current username..</li>
+							<li>Ask for user current logined email.</li>
+							<li>Ask user for user last used password.</li>
+						</ul>
+					</ul>
+				</ul>
+
+			</ul>
+			<h3 style="text-decoration: underline;" id="aboutUpcomming">About upcoming features</h3>
+			<ul>
+				<li>Post badges</li>
+				<li>Post reporting</li>
+				<li>File access from another device</li>
+				<ul>
+					<li>If a programmer have only 2 Android devices,then sometimes the programmer create files in both devices and want to access in both devices without any backup.</li>
+					<li>We have a thought about that feature,We can access all files from another device and create folders,create files,edit files and delete files from another device.But this may increase data usage in databases so this feature will be time limited this feature will be created after 7 or 8 update but we doesn't guarantee.</li>
+				</ul>
+				These features are not created yet but there is some hope to add them.
+				<br>
+				Stay tuned!
+			</ul>
+
+			<h3 style="text-decoration: underline;" id="about1.2.1">About version 1.2.1</h3>
+			<ul>
+				<li>Minor changes</li>
+				<ul>
+					<li>Small bug fixes</li>
+					<li>Main screen progressbar style changed circular to horizontal</li>
+					<li>Menu UI update(As cards)</li>
+					<li>Chat message notifications</li>
+				</ul>
+				<li>New features</li>
+				<ul>
+					<li>Beautify code added(format code)</li>
+					<li>Code editor themes added 39 theme (by <a href="https://ace.c9.io/">Ace</a>)</li>
+					<li>Console log added</li>
+					<li>Profile viewer updated</li>
+					<li>Learn Programming notes(Document) added</li>
+					<li>YouTube tutorials added</li>
+					<li>Time zone convertor for all countries</li>
+					<li>Code editor font size changeable</li>
+				</ul>
+				<li>Removed features</li>
+				<ul>
+					<li>Random prizes</li>
+				</ul>
+				<li><a href="https://ace.c9.io/">Ace editor</a></li>
+			</ul>
+
+			<h3 style="text-decoration: underline;" id="about1.2.0">About Version 1.2.0</h3>
+			<ul>
+				<li>Version</li>
+				<ul>
+					<li>Version of apk is changed 1.1 to 1.2.0 but when you check version code using your setting so it will show you 1.2.This is because the app version is really 1.2 but we show users that your version is 1.2.0 because if we fixes small bug time to time then we didn't need to change whole version.</li>
+				</ul>
+
+				<li>Bug fixes</li>
+				<ul>
+					<li>We have fixed a log of bug which is occurring in version 1.2.0.</li>
+					<li>Debug log is added which will track bug and send us debug log (only in app bug).</li>
+				</ul>
+
+				<li>UI improvements</li>
+				<ul>
+					<li>We have improved UI(User Interface) of app.</li>
+				</ul>
+
+				<li>New themes</li>
+				<ul>
+					<li>Now HTML creator master have 8 themes,New themes new look</li>
+					<li>Themes color are as follow</li>
+					<ul>
+						<li>Dark blue - #5362FB</li>
+						<li>Pink - #E91E63</li>
+						<li>Orange - #F44336</li>
+						<li>Purple - #9C27B0</li>
+						<li>Teal - #009688</li>
+						<li>Brown - #795548</li>
+						<li>Grey - #607D8B</li>
+						<li>Black - #607D8B</li>
+					</ul>
+				</ul>
+
+				<li>Chat with other web designers/developers</li>
+				<ul>
+					<li>We have created chat section for communication user to user because a user <strong>"Hritik"</strong> sended feedback to TSD that is <strong>"yes it is very nice bro i think this app need more improvement so please develop this app and also make a chat section for admins or users i think 🤔 you also support my suggestion thanks for give me a nice app"</strong> so we decide to create chat section</li>
+				</ul>
+
+				<li>Follower/Following system (under development)</li>
+				<ul>
+					<li>We have added follower/following system but it is under still development you can follow a user but you can't receive any notification after following someone.</li>
+				</ul>
+
+				<li>Settings option added</li>
+				<ul>
+					<li>We have added setting option to edit your profile</li>
+					<li>Setting includes</li>
+					<ul>
+						<li>Change profile photo</li>
+						<li>Change user name</li>
+						<li>Change themes(8 theme as you readed before)</li>
+						<li>Comment Notifications(Switch)</li>
+						<li>Reply Notifications(Switch)</li>
+						<li>Excluding settings</li>
+						<ul style="list-style-type: disc;">
+							<li>Admin registration button</li>
+							<li>Terms and conditions</li>
+							<li>Privacy policy</li>
+						</ul>
+					</ul>
+				</ul>
+
+				<li>Notification screen</li>
+				<ul>
+					<li>Added notification screen to re see your notification</li>
+				</ul>
+
+				<li>Update screen added</li>
+				<ul>
+					<li>Update screen is added hiddenly when you receive an update so it will give you details of update.</li>
+				</ul>
+
+				<li>Rating(In feedback)</li>
+				<ul>
+					<li>As you know this app is currently not available in play store so you can't see it's rating so we added in app rating</li>
+					<li>You can also rate this app</li>
+				</ul>
+
+				<li>Comments</li>
+				<ul>
+					<li>We have added comment on post so you can send your comment on a post.</li>
+				</ul>
+
+				<li>Views counter</li>
+				<ul>
+					<li>In version 1.1 post view counter is not added but it is added now.You can visit how many people visited your post</li>
+				</ul>
+
+				<li>Edit publised HTML codes</li>
+				<ul>
+					<li>Now you can edit your publish code using <a href="main/win.html#token5">token5</a>.</li>
+
+				</ul>
+
+				<li>Profile type</li>
+				<ul>
+					<li>We have added profile bandange system that declares what type of user profile.</li>
+					<ul>
+						<li><a href="main/win.html#badge1">User</a></li>
+						<li><a href="main/win.html#badge2">Admin</a></li>
+						<li><a href="main/win.html#badge3">Developer</a></li>
+					</ul>
+				</ul>
+
+				<li>Profile badges</li>
+				<ul>
+					<li>We have added profile bandange system in profile.</li>
+					<ul>
+						<li>
+							<div style="
+				background-color:#4caf50;
+				color:#fff;
+				border-radius: 360px;
+				width: wrap;
+				padding: 0.5em;
+				text-align: center;
+				margin: 0.5em;
+				">Verified</div>
+						</li>
+
+						<li>
+							<div style="
+				background-color:#009688;
+				color:#fff;
+				border-radius: 360px;
+				width: wrap;
+				padding: 0.5em;
+				text-align: center;
+				margin: 0.5em;
+				">TSD Admin</div>
+						</li>
+
+						<li>
+							<div style="
+				background-color:red;
+				color:#fff;
+				border-radius: 360px;
+				width: wrap;
+				padding: 0.5em;
+				text-align: center;
+				margin: 0.5em;
+				">Youtuber</div>
+						</li>
+
+						<li>
+							<div style="
+				background-color:#2196f3;
+				color:#fff;
+				border-radius: 360px;
+				width: wrap;
+				padding: 0.5em;
+				text-align: center;
+				margin:0.5em;
+				">Web developer</div>
+						</li>
+
+						<li>
+							<div style="
+				background-color:#e91e63;
+				color:#fff;
+				border-radius: 360px;
+				width: wrap;
+				padding: 0.5em;
+				text-align: center;
+				margin: 0.5em;
+				">UI and UX designers</div>
+						</li>
+
+						<li>
+							<div style="
+				background-color:#673ab7;
+				color:#fff;
+				border-radius: 360px;
+				width: wrap;
+				padding: 0.5em;
+				text-align: center;
+				margin: 0.5em;
+				">Code Teacher</div>
+						</li>
+						<li>
+							<div style="
+				background-color:#3f51b5;
+				color:#fff;
+				border-radius: 360px;
+				width: wrap;
+				padding: 0.5em;
+				text-align: center;
+				margin: 0.5em;
+				">Professional Programmer</div>
+						</li>
+
+						<li>
+							<div style="
+				background-color:#607d8b;
+				color:#fff;
+				border-radius: 360px;
+				width: wrap;
+				padding: 0.5em;
+				text-align: center;
+				margin: 0.5em;
+				">Helpmate</div>
+						</li>
+
+					</ul>
+
+				</ul>
+
+				<li>Privacy policy And Terms and Conditions</li>
+				<ul>
+					<li>We have updated the <a href="assets/termsandcondition.html">Terms and conditions</a> and <a href="assets/privacypolicy.html">Privacy Policy</a> so please read it carefully before you use app.</li>
+
+				</ul>
+
+
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="section" id="section3">
+		<center>
+			<p style="text-decoration: underline;" onclick="section('3')">Our Social media</p>
+		</center>
+		<div class="sectionContent" id="section3Content">
+			<center>
+				<a href="https://youtube.com/channel/UCHq6onpXT_5u9N77hjN2W2A"><button class="buttonUI">Youtube</button></a>
+				<a href="https://www.facebook.com/profile.php?id=100019763839969"><button class="buttonUI">Facebook</button></a>
+
+			</center>
+		</div>
+	</div>
+
+	<div class="section" id="section4">
+		<center>
+			<p style="text-decoration: underline;" onclick="section('4')">Contact Us</p>
+		</center>
+		<div class="sectionContent" id="section4Content">
+			<ul>
+				<li>Email</li>
+				<ul>
+					<li>appdeveloper400@gmail.com</li>
+					<li>devkumar9760955514@gmail.com</li>
+				</ul>
+
+				<li>Telegram</li>
+				<ul>
+					<li><a href="https://t.me/TechnicalStudioDeveloper">Telegram</a></li>
+				</ul>
+				<li>Messenger</li>
+				<ul>
+
+					<li><a href="https://m.me/tsudeProgrammer?fbclid=IwAR0K3uaNx0Pb29kJqkBHVPVt3BEsghpWqsK-x2ETaJWzUvThJcIfxUswi80">Message on our page</a></li>
+					<li><a href="https://m.me/tsudeProgrammers">Messenger Direct message</a></li>
+				</ul>
+				<li>Facebook</li>
+				<ul>
+					<li><a href="https://www.facebook.com/tsudeProgrammers">Dev Kumar</a></li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+	<div id="progressBar">
+
+		<!-- <div id="backdrop_progressBar">
+		<div id="progress_background">
+			<div id="loader"></div>
+			<span id="progress_text">Loading...</span>
+		<					<li><a href="https://t.me/TechnicalStudioDeveloper">Telegram</a></li>
+/div>
+			</div> -->
+
+	</div>
+
+	<style>
+		body {
+			user-select: none;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 1em;
+			margin: 0;
+			background-image: var(--gradient);
+		}
+
+		.buttonUI {
+			min-width: 60%;
+			padding: 0.5em;
+			color: var(--white);
+			border: none;
+			margin: 0.3em;
+			background: linear-gradient(145deg, #520dd4, #610ffb);
+			box-shadow: 2px 2px 5px var(--box-shadow-color1),
+				-2px -2px 5px var(--box-shadow-color2);
+			border-radius: 0.3em;
+			color: var(--text-color-primary);
+		}
+
+		.buttonUI:active,
+		.buttonUI:hover {
+			box-shadow: inset -2px -2px 5px var(--box-shadow-color1),
+				inset 2px 2px 5px var(--box-shadow-color2);
+		}
+
+		#circle-logo {
+			width: 40vmin;
+			height: 40vmin;
+			background-color: transparent;
+			border-radius: 360px;
+			display: grid;
+			place-items: center;
+			box-shadow:
+				-3px -3px 5px var(--box-shadow-color2),
+				3px 3px 5px var(--box-shadow-color1),
+				inset -3px -3px 5px var(--box-shadow-color2),
+				inset 3px 3px 5px var(--box-shadow-color1);
+
+		}
+
+		li,
+		a,
+		p,
+		html {
+			color: white;
+		}
+
+		#logo {
+			width: 100%;
+			height: 100%;
+			border-radius: 100%;
+		}
+
+		li,
+		.list-heading {
+			font-weight: bold;
+		}
+
+		.section {
+			background: transparent;
+			margin-top: 2em;
+			border-radius: 0.5em;
+			padding: 1em;
+			overflow: auto;
+			box-shadow:
+				-3px -3px 5px var(--box-shadow-color2),
+				3px 3px 5px var(--box-shadow-color1);
+		}
+
+		iframe {
+			border: none;
+			width: 100%;
+		}
+
+		#header {
+			width: 100%;
+			height: 10vmin;
+			background: #0000007d;
+			position: sticky;
+			top: 0;
+			opacity: 1;
+			transition: 1s all;
+			display: flex;
+			place-items: center;
+		}
+
+		#header_logo {
+			width: height;
+			height: 100%;
+			position: relative;
+			left: 75%;
+			transition: 1.5s all;
+		}
+
+		#menuIcon {
+			color: white;
+			height: 10vmin;
+			width: 10vmin;
+			place-items: center;
+			display: grid;
+			font-size: 5vmin;
+
+			border-radius: 50px;
+			transition: all 2s;
+
+		}
+
+		#confirmDialogBackDrop {
+			background-color: #0000007d;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: none;
+			place-items: center;
+		}
+
+		#confirmDialog {
+			background-color: white;
+			width: 90vmin;
+			border-radius: 0.2em;
+		}
+
+		#dialogContent {
+			padding: .5em;
+		}
+
+		.agreeListContent {
+			display: flex;
+			place-items: center;
+		}
+
+		.agreeListContent>a {
+			color: black;
+		}
+
+		#drawer {
+			position: fixed;
+			background-color: #0000007d;
+			top: 0;
+			left: -80vw;
+			width: 80vw;
+			height: 100vh;
+			z-index: 2;
+			overflow: auto;
+		}
+
+		.drawerOpen {
+			animation: openDrawer 1s linear;
+		}
+
+		.drawerClose {
+			animation: closeDrawer 1s linear;
+		}
+
+		@keyframes closeDrawer {
+			0% {
+				left: 0%;
+			}
+
+			100% {
+				left: -80%;
+			}
+		}
+
+		@keyframes openDrawer {
+			0% {
+				left: -80%;
+			}
+
+			100% {
+				left: 0;
+			}
+		}
+
+		.drawerLinks {
+			width: 90%;
+			padding: .8em;
+			background: #0000004F;
+			border-radius: 5px;
+			margin: 0.5em;
+			/* text-align: center; */
+		}
+		.drawerLinksAnchor{
+			text-decoration: none;
+		}
+
+		#closeIcon {
+			color: white;
+			margin-left: 100%;
+			transform: translateX(-100%);
+
+		}
+
+		#navigationTigger {
+			width: 100vw;
+			height: 1px;
+			background: red;
+		}
+	</style>
+
+	<script src="main.js"></script>
+	<script src="variables.js"></script>
+	<script>
+		drawer = element('#drawer');
+		menuIcon = element('#menuIcon');
+		closeIcon = element('#closeIcon');
+
+
+		function section(no) {
+			var contents = document.getElementById('section' + no + 'Content');
+			if (contents.style.display == 'block') {
+				contents.style.display = 'none';
+			} else {
+				contents.style.display = 'block'
+			}
+
+		}
+
+		window.onload = function start() {
+			progressBar(false);
+		}
+
+		function download() {
+			window.location.href = 'assets/HTML creator master 1.3.apk';
+			dialog(false);
+		}
+
+
+		function dialog(state) {
+			if (state) {
+				document.getElementById('confirmDialogBackDrop').style.display = 'grid';
+				document.getElementById('checkbox1').checked = false;
+				document.getElementById('checkbox2').checked = false;
+			} else {
+				document.getElementById('confirmDialogBackDrop').style.display = 'none';
+				document.getElementById('checkbox1').checked = false;
+				document.getElementById('checkbox2').checked = false;
+			}
+		}
+
+
+		menuIcon.addEventListener('click', function() {
+			drawerState(true);
+		});
+
+		closeIcon.addEventListener('click', function() {
+			drawerState(false);
+		});
+
+		function drawerState(state) {
+
+			if (state) {
+				drawer.style.left = '0%';
+				/*
+				drawer.classList.add('drawerOpen');
+				setTimeout(() => {
+					drawer.classList.add('drawerOpen');
+				}, 1000);*/
+			} else {
+				drawer.style.left = '-80%';
+				/*drawer.classList.add('drawerClose');
+				setTimeout(() => {
+					drawer.classList.remove('drawerClose');
+				}, 1000);*/
+			}
+		}
+
+		function element(element) {
+			return document.querySelector(element)
+		}
+		//sticky
+		var observerForLogo = new IntersectionObserver(function(entries) {
+			// no intersection with screen
+			if (entries[0].intersectionRatio === 0) {
+				//document.querySelector("#header_logo").classList.add("NavStickyAdd");
+				//document.querySelector("#header_logo").classList.remove("NavStickyRemove");
+				document.querySelector("#header_logo").style.left = "0%";
+
+
+				// fully intersects with screen
+			} else if (entries[0].intersectionRatio === 1) {
+				//document.querySelector("#header_logo").classList.remove("NavStickyAdd");
+				//document.querySelector("#header_logo").classList.add("NavStickyRemove");
+				document.querySelector("#header_logo").style.left = "75%";
+
+			}
+
+		}, { threshold: [0, 1] });
+
+		observerForLogo.observe(document.querySelector("#navigationTigger"));
+	</script>
+
+
+
+</body>
+
+</html>

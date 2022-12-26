@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML creator master</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<div id="codeEditorQuestion">
+		<div class="section">
+			<div class="question">Q.Does console log are supported?</div>
+			<div class="answer">Ans.Yes ,From version 1.2.1 console logs are supported</div>
+		</div>
+		<div class="section">
+			<div class="question">Q.Does it supports syntax highlighting?</div>
+			<div class="answer">Ans.Yes from Version 1.2.0 highlighting is supported but not a theme we only do that using ReGex.But from Version 1.2.1 it supports 39 theme(By <a href="https://ace.c9.io/">Ace</a>)</div>
+		</div>
+		<div class="section">
+			<div class="question">Q.Does editor auto saves the code?</div>
+			<div class="answer">Ans.Yes,When you click back key,pause the app,or delete app from recent then the code automatically get saved.</div>
+		</div>
+	</div>
+	
+	<div id="redeemCodeQuestions">
+		<div class="section">
+			<div class="question">Q.What is the use of redeem codes in app?</div>
+			<div class="answer">Ans.It can be used to Redeeming tokens,In app prizes etc.</div>
+		</div>
+		<div class="section">
+			<div class="question">Q.From where I can get redeem codes?</div>
+			<div class="answer">Ans.You can get the redeem code on YouTube,Facebook by HTML creator master admins and developer.Ofiicial <a href="https://youtube.com/channel/UCHq6onpXT_5u9N77hjN2W2A">Youtube</a> channel</div>
+		</div>
+		<div class="section">
+			<div class="question">Q.How can I use redeem code?</div>
+			<div class="answer">Ans.Click on redeem code option in menu > Enter your redeem code > Click on "redeem" code > Reward will be automatically added to your profile.</div>
+		</div>
+	</div>
+<!--
+		<div class="section">
+			<div class="question">Q.</div>
+			<div class="answer">Ans.</div>
+		</div>
+
+-->
+	<style>
+
+		body {
+			user-select: none;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 1em;
+			margin: 0;
+			background-image: var(--gradient);
+		}
+
+		.section {
+			background: transparent;
+			margin-top: 1em;
+			margin-bottom: 1em;
+
+			border-radius: 0.5em;
+			padding: 1em;
+			overflow: auto;
+			box-shadow:
+				-3px -3px 5px var(--box-shadow-color2),
+				3px 3px 5px var(--box-shadow-color1);
+		}
+
+		.answer {
+		}
+		html,a{
+			color:white;
+		}
+	</style>
+	<script>
+		var categories = new Map();
+		
+		categories.set('category1' , document.getElementById('codeEditorQuestion'));
+		categories.set('category2' , document.getElementById('redeemCodeQuestions'));
+		
+	</script>
+</body>
+
+</html>

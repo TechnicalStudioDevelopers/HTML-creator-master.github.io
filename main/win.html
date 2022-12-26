@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TSD prizes</title>
+</head>
+<body>
+
+
+<div class="tokenList">
+	
+	<div class="tokenParent">
+		<img src="assets/token1.png" alt="" class="token" id="token1">
+		<p>This is a token token which is used to delete your uploaded code from database.This token name(given by TSD)is token1.</p>
+	</div>
+	
+	
+	<div class="tokenParent">
+		<img src="assets/token2.png" alt="" class="token" id="token2">
+		<p>This is a token token which is used to upload your uploaded code to publicly.This token name(given by TSD)is token2.You need 50 token2 to upload your code.</p>
+	</div>
+	
+	
+	<div class="tokenParent">
+		<img src="assets/token3.png" alt="" class="token" id="token3">
+		<p>This is a token token which is used to upload your uploaded code to publicly.This token name(given by TSD)is token3.You need 5 token3 to upload your code.</p>
+	</div>
+	
+	
+	<div class="tokenParent">
+		<img src="assets/token4.png" alt="" class="token" id="token4">
+		<p>This is a token token which is used to get prizes or exchange w8th other tokens.This token name(given by TSD)is token4.You can get this token by playing game in app,or by giving correct answer in quiz.</p>
+	</div>
+	
+	
+	<div class="tokenParent">
+		<img src="assets/token5.png" alt="" class="token" id="token5">
+		<p>This token is used for edition in your publicly uploaded code.You need 5 tokens to edit your published code.</p>
+	</div>
+</div>
+
+
+<div class="badgesList">
+	<div class="badgeParent">
+		<img src="assets/user.png" alt="" class="badge" id="badge1">
+		<p>This is a badge which declares that a profile is a user profile.</p>
+	</div>
+	
+	<div class="badgeParent">
+		<img src="assets/moderator.png" alt="" class="badge" id="badge2">
+		<p>This is a badge which declares that a profile is a admin profile.This badge is given to those people who promote our app,distribute redeem codes to their subscribers,followers</p>
+	</div>
+	
+	<div class="badgeParent">
+		<img src="assets/developer.png" alt="" class="badge" id="badge3">
+		<p>This is a badge which declares that a profile is a developer profile.This badge only given to those developer who had developed HTML creator master.</p>
+	</div>
+</div>
+
+
+<style>
+
+	body{
+		background-image:var(--gradient);
+	}
+	.tokenList{
+		display:grid;
+	}
+	.badgesList{
+		display: grid;
+
+	}
+	.token{
+		width: 3em;
+		height: 3em;
+		background-color:#ffffff;
+		border-radius: 360px;
+		padding: 2px;
+	}
+	.badge{
+		width: 3em;
+		height: 3em;
+		
+	}
+	p{
+		color:var(--text-color-primary);
+	}
+	.badgeParent,.tokenParent{
+		display: flex;
+		place-items:center;
+		margin: 0.5em;
+		color:#000;
+		box-shadow:
+			-0.3em -0.3em 0.5em var(--box-shadow-color2),
+			0.3em 0.3em 0.5em var(--box-shadow-color1);
+		border-radius: 0.5em;
+	}
+	
+</style>
+
+
+</body>
+</html>
